@@ -1,29 +1,55 @@
-<h2>Sign up</h2>
+<div class="container mt-4 pb-5">
+  <h2 class="mb-5 mt-5">アカウント作成</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row mb-6">
+      <label class="col-lg-2">アカウント名</label>
+      <div class="col-lg-4">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "musichat", size: 25 %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <label class="col-lg-2">メールアドレス</label>
+      <div class="col-lg-4">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "×××@example.com", size: 25 %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <label class="col-lg-2">パスワード
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %>
+      </label>
+      <div class="col-lg-4">
+        <%= f.password_field :password, autocomplete: "new-password", size: 25 %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <label class="col-lg-2">パスワード確認</label>
+      <div class="col-lg-4">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", size: 25 %>
+      </div>
+    </div>
+
+    <div class="row mb-6">
+      <div class="col-lg-4">
+        <%= f.submit "アカウント作成", class: "btn btn-primary w-75" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row mb-6">
+    <div class="col-lg-4">
+      <p><strong>アカウントをお持ちの場合</strong></p>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="row mb-6">
+    <div class="col-lg-4">
+      <%= link_to 'ログイン', user_session_path, class: 'btn btn-light sign_in' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "public/shared/links" %>
+</div>

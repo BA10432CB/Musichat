@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6" >
+      <h1>音楽で世界と繋がる</h1>
+      <h3>MusiChatをはじめよう</h3>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to 'アカウント作成', new_user_registration_path, class: 'btn btn-primary sign_up' %>
+        </div>
+        <div class="row">
+          <p><strong>アカウントをお持ちの場合</strong></p>
+        </div>
+        <div class="row">
+          <%= link_to 'ログイン', user_session_path, class: 'btn btn-light sign_in' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
