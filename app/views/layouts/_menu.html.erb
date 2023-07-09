@@ -1,0 +1,28 @@
+<ul class="side-bar">
+  <li>
+    <a href='/posts'><%= image_tag 'design.jpg', :size => '50x50' %></a>
+  </li>
+  <li>
+    <%= link_to posts_path, class: 'menu' do %>
+      <i class="far fa-home"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_my_profile_path, class: 'menu' do %>
+      <i class="far fa-user-alt"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_my_profile_path, class: 'menu' do %>
+      <i class="far fa-bookmark"></i>
+    <% end %>
+  </li>
+  <li>
+    <a href='/posts'><%= image_tag 'post.jpg', :size => '50x50' %></a>
+  </li>
+  <li>
+    <%= link_to users_my_profile_path, class: 'menu' do %>
+      <i class="fas fa-comments"></i>
+    <% end %>
+  </li>
+</ul>

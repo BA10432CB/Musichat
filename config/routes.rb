@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     get 'users/my_profile'      => 'users#show'
     get 'users/my_profile/edit' => 'users#edit'
     patch 'users/my_profile'    => 'users#update'
-    resources :posts, only: [:new, :create, :index, :show, :destroy]
-    resources :songs, only: [:index, :show]
+    resources :posts,     only: [:new, :create, :index, :show, :destroy]
+    resources :songs,     only: [:index, :show]
+    resources :composers, only: [:index]
+    resources :genres,    only: [:index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'public/homes#top'
