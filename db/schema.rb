@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 2023_07_05_120907) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", null: false
     t.string "phone_number", null: false
-    t.date "birthday", null: false
+    t.date "birthday"
     t.boolean "is_active", default: true, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
