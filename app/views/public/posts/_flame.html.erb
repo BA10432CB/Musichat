@@ -1,7 +1,7 @@
 <div class="col w-75 mx-auto">
   <% posts.each do |post| %>
     <div>
-      <%= link_to(post.user) do %>
+      <%= link_to users_my_profile_path do %>
         <%= image_tag post.user.get_profile_image, size: '50x50' %>
         <%= post.user.name %>
       <% end %>
@@ -9,8 +9,22 @@
     <div>
       <%= image_tag post.image, size: '200x200' %>
       <span>
-        <%= post.title, post, class: "post_#{post.id}" %>
-        <%= post.introduction %>
+        <%= post.title %>
+        <%= post.body %>
       </span>
     </div>
+    <div id="star-rate<%= post.id%>">
+    <script>
+      $('#star-rate<%= post.id %>').empty();
+      $('#star-rate<%= post.id %>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        half      : false,
+        readOnly: true,
+        score: <%= post.star %>,
+      });
+    </script>
+    </div>
+  <% end %>
 </div>

@@ -4,25 +4,25 @@
   </li>
   <li>
     <%= link_to posts_path, class: 'menu' do %>
-      <i class="far fa-home"></i>
+      <i class="fas fa-home" style="font-size: 40px;"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_my_profile_path, size: '50x50', class: 'menu' do %>
+      <i class="fas fa-user-alt" style="font-size: 40px;"></i>
     <% end %>
   </li>
   <li>
     <%= link_to users_my_profile_path, class: 'menu' do %>
-      <i class="far fa-user-alt"></i>
+      <i class="far fa-bookmark" style="font-size: 40px;"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to users_my_profile_path, class: 'menu' do %>
-      <i class="far fa-bookmark"></i>
-    <% end %>
-  </li>
-  <li>
-    <a href='/posts'><%= image_tag 'post.png', :size => '50x50' %></a>
+    <a href='/posts/new'><%= image_tag 'post.png', :size => '50x50' %></a>
   </li>
   <li>
     <%= link_to users_my_profile_path, class: 'menu' do %>
-      <i class="fas fa-comments"></i>
+      <i class="fas fa-comments" style="font-size: 40px;"></i>
     <% end %>
   </li>
 </ul>
