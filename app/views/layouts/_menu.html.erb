@@ -25,4 +25,9 @@
       <i class="fas fa-comments" style="font-size: 40px;"></i>
     <% end %>
   </li>
+  <li>
+    <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-light sign_out' do %>
+      <i class="fas fa-sign-out-alt"></i>
+    <% end %>
+  </li>
 </ul>
