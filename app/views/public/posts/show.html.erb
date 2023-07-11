@@ -1,0 +1,32 @@
+<div class="container mt-4 pb-5">
+  <div class="row">
+    <div class="rol">
+      <div>
+        <%= link_to user_path(@post.user) do %>
+          <%= image_tag @post.user.get_profile_image, size: '80x80' %>
+          <%= @post.user.name %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to post_path(@post) do %>
+          <%= image_tag @post.image, size: '200x200' %>
+          <span>
+            <%= @post.title %>
+            <%= @post.body %>
+          </span>
+        <%= render 'static_rate', post: @post %>
+        <% end %>
+      </div>
+      <div>
+        <%= form_with model: [@post, @post_comment], local: true do |f| %>
+          <%= f.text_area :comment, rows: 5, placeholder: "コメント" %>
+          <%= f.submit "コメント" %>
+        <% end %>
+      </div>
+      <div>
+        <%= render 'comment_flame', post: @post %>
+      </div>
+
+    </div>
+  </div>
+</div>
