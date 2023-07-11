@@ -8,12 +8,12 @@
     <% end %>
   </li>
   <li>
-    <%= link_to users_my_profile_path, size: '50x50', class: 'menu' do %>
+    <%= link_to user_path(current_user), size: '50x50', class: 'menu' do %>
       <i class="fas fa-user-alt" style="font-size: 40px;"></i>
     <% end %>
   </li>
   <li>
-    <%= link_to users_my_profile_path, class: 'menu' do %>
+    <%= link_to user_path(current_user), class: 'menu' do %>
       <i class="far fa-bookmark" style="font-size: 40px;"></i>
     <% end %>
   </li>
@@ -21,7 +21,7 @@
     <a href='/posts/new'><%= image_tag 'post.png', :size => '50x50' %></a>
   </li>
   <li>
-    <%= link_to users_my_profile_path, class: 'menu' do %>
+    <%= link_to user_path(current_user), class: 'menu' do %>
       <i class="fas fa-comments" style="font-size: 40px;"></i>
     <% end %>
   </li>

@@ -15,9 +15,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    get 'users/my_profile'      => 'users#show'
-    get 'users/my_profile/edit' => 'users#edit'
-    patch 'users/my_profile'    => 'users#update'
+    resources :users,     only: [:show, :edit, :update]
     resources :posts,     only: [:new, :create, :index, :show, :destroy]
     resources :songs,     only: [:index, :show]
     resources :composers, only: [:index]
