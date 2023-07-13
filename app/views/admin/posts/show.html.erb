@@ -1,0 +1,23 @@
+<div class="container mt-4 pb-5">
+  <div class="row">
+    <div class="col">
+      <div>
+        <%= link_to admin_user_path(@post.user) do %>
+          <%= image_tag @post.user.get_profile_image, size: '80x80' %>
+          <%= @post.user.name %>
+        <% end %>
+      </div>
+      <div>
+        <%= image_tag @post.image, size: '200x200' %>
+        <span>
+          <%= @post.title %>
+          <%= @post.body %>
+        </span>
+        <%= render 'public/posts/static_rate', post: @post %>
+      </div>
+      <div>
+        <%= render 'comment_flame', post: @post %>
+      </div>
+    </div>
+  </div>
+</div>

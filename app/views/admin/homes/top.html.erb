@@ -1,0 +1,25 @@
+<div class="container mt-4 pb-5">
+  <h2>管理画面</h2>
+  <div class="row">
+    <div class="ol">
+      <span>
+        <%= link_to admin_users_path, class: 'box' do %>
+          <i class="fas fa-users"></i>
+          <p>ユーザ一覧</p>
+        <% end %>
+      </span>
+      <span>
+        <%= link_to admin_posts_path, class: 'box' do %>
+          <i class="fas fa-newspaper"></i>
+          <p>投稿一覧</p>
+        <% end %>
+      </span>
+      <span>
+        <%= link_to admin_songs_path, class: 'box' do %>
+          <i class="far fa-music"></i>
+          <p>曲名一覧</p>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>

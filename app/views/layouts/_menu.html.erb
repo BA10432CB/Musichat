@@ -1,33 +1,61 @@
 <ul class="side-bar">
-  <li>
-    <a href='/posts'><%= image_tag 'design.png', :size => '50x50' %></a>
-  </li>
-  <li>
-    <%= link_to posts_path, class: 'menu' do %>
-      <i class="fas fa-home" style="font-size: 40px;"></i>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to user_path(current_user), size: '50x50', class: 'menu' do %>
-      <i class="fas fa-user-alt" style="font-size: 40px;"></i>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to user_path(current_user), class: 'menu' do %>
-      <i class="far fa-bookmark" style="font-size: 40px;"></i>
-    <% end %>
-  </li>
-  <li>
-    <a href='/posts/new'><%= image_tag 'post.png', :size => '50x50' %></a>
-  </li>
-  <li>
-    <%= link_to user_path(current_user), class: 'menu' do %>
-      <i class="fas fa-comments" style="font-size: 40px;"></i>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-light sign_out' do %>
-      <i class="fas fa-sign-out-alt"></i>
-    <% end %>
-  </li>
+  <% if user_signed_in? %>
+    <li>
+      <a href='/posts'><%= image_tag 'design.png', :size => '50x50' %></a>
+    </li>
+    <li>
+      <%= link_to posts_path, class: 'menu' do %>
+        <i class="fas fa-home" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_path(current_user), size: '50x50', class: 'menu' do %>
+        <i class="fas fa-user-alt" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_path(current_user), class: 'menu' do %>
+        <i class="far fa-bookmark" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <a href='/posts/new'><%= image_tag 'post.png', :size => '50x50' %></a>
+    </li>
+    <li>
+      <%= link_to user_path(current_user), class: 'menu' do %>
+        <i class="fas fa-comments" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-light sign_out' do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    </li>
+  <% elsif admin_signed_in? %>
+    <li>
+      <%= link_to admin_home_path, class: 'menu' do %>
+        <i class="fas fa-home" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_users_path, class: 'menu' do %>
+        <i class="fas fa-users" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_posts_path, class: 'menu' do %>
+        <i class="fas fa-newspaper" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_songs_path, class: 'menu' do %>
+        <i class="far fa-music" style="font-size: 40px;"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_admin_session_path, method: :delete, class: 'btn btn-light sign_out' do %>
+        <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+    </li>
+  <% end %>
 </ul>

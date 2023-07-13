@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :songs, only: [:new, :create, :index, :edit, :update, :destroy]
-    resources :genres, only: [:new, :create, :index, :edit, :update, :destroy]
+    get 'home' => 'homes#top'
+    resources :users,     only: [:index, :show, :edit, :update]
+    resources :posts,     only: [:index, :show, :edit, :update, :destroy] do
+      resources :post_comments, only: [:destroy]
+    end
+    resources :songs,     only: [:new, :create, :index, :show, :edit, :update, :destroy]
+    resources :genres,    only: [:new, :create, :index, :edit, :update, :destroy]
     resources :composers, only: [:new, :create, :index, :edit, :update, :destroy]
   end
 

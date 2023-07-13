@@ -1,6 +1,6 @@
 <div class="container mt-4 pb-5">
   <div class="row">
-    <div class="rol">
+    <div class="col">
       <div>
         <%= link_to user_path(@post.user) do %>
           <%= image_tag @post.user.get_profile_image, size: '80x80' %>
@@ -26,7 +26,6 @@
       <div>
         <%= render 'comment_flame', post: @post %>
       </div>
-
     </div>
   </div>
 </div>

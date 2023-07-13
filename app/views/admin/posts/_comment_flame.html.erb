@@ -1,0 +1,14 @@
+<% post.post_comments.each do |post_comment| %>
+  <div>
+    <%= link_to user_path(post_comment.user) do %>
+      <%= image_tag post_comment.user.get_profile_image, size: '80x80' %>
+      <%= post_comment.user.name %>
+    <% end %>
+  </div>
+  <div>
+    <%= post_comment.comment %>
+  </div>
+  <div>
+    <%= link_to '削除', admin_post_post_comment(post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-primary' %>
+  </div>
+<% end %>
