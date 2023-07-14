@@ -9,6 +9,6 @@
     <%= post_comment.comment %>
   </div>
   <div>
-    <%= link_to '削除', admin_post_post_comment(post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-primary' %>
+    <%= link_to '削除', admin_post_post_comment_path(post_comment), method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-primary' %>
   </div>
 <% end %>

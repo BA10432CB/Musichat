@@ -1,0 +1,10 @@
+<div class="col w-75 mx-auto">
+  <% users.each do |user| %>
+    <div>
+      <%= link_to admin_user_path(user) do %>
+        <%= image_tag user.get_profile_image, size: '100x100' %>
+        <%= user.name %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

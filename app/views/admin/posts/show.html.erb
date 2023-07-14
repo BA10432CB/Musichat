@@ -16,6 +16,10 @@
         <%= render 'public/posts/static_rate', post: @post %>
       </div>
       <div>
+        <%= link_to '編集', edit_admin_post_path(@post), class: 'btn btn-primary' %>
+        <%= link_to '削除', admin_post_path(@post), method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-primary' %>
+      </div>
+      <div>
         <%= render 'comment_flame', post: @post %>
       </div>
     </div>
