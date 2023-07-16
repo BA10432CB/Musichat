@@ -1,0 +1,15 @@
+<%= form_with model: [:admin, song], local: true do |f| %>
+  <div class="form-group row mt-5">
+    <%= f.label :name, "曲名", class: "col-4 col-form-label" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group row mt-5">
+    <%= f.label :composer, "作曲者", class: "col-4 col-form-label" %>
+    <%= f.select :composer_id, composers, {}, {class: 'form-select'} %>
+  </div>
+  <div class="form-group row mt-5">
+    <%= f.label :genre, "ジャンル", class: "col-4 col-form-label" %>
+    <%= f.select :genre_id, genres, {}, {class: 'form-select'} %>
+  </div>
+  <%= f.submit '登録' %>
+<% end %>

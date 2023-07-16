@@ -25,8 +25,18 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3">
-
+          <div class="col-lg-3 search_form">
+            <% if admin_signed_in? %>
+              <%= form_with url: admin_search_path, locol: true, method: :get do |f| %>
+                <%= f.text_field :word %>
+                <%= f.submit "検索", class: "btn-sm" %>
+              <% end %>
+            <% elsif user_signed_in? %>
+              <%= form_with url: search_path, local: true, method: :get do |f| %>
+                <%= f.text_field :word %>
+                <%= f.submit "検索", class: "btn-sm" %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

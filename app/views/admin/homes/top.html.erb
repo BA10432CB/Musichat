@@ -16,8 +16,20 @@
       </span>
       <span>
         <%= link_to admin_songs_path, class: 'box' do %>
-          <i class="far fa-music"></i>
+          <i class="fas fa-music"></i>
           <p>曲名一覧</p>
+        <% end %>
+      </span>
+      <span>
+        <%= link_to admin_genres_path, class: 'box' do %>
+          <i class="fas fa-guitar"></i>
+          <p>ジャンル一覧</p>
+        <% end %>
+      </span>
+      <span>
+        <%= link_to admin_composers_path, class: 'box' do %>
+          <i class="fas fa-feather-alt"></i>
+          <p>作曲者一覧</p>
         <% end %>
       </span>
     </div>

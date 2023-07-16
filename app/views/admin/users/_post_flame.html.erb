@@ -1,0 +1,11 @@
+<% posts.each do |post| %>
+  <div>
+    <%= link_to admin_post_path(post) do %>
+      <%= image_tag post.image, size: '200x200' %>
+      <span>
+        <%= post.title %>
+        <%= post.body %>
+      </span>
+    <% end %>
+  </div>
+<% end %>

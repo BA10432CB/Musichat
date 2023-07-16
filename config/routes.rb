@@ -6,8 +6,9 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:destroy]
     end
     resources :songs,     only: [:new, :create, :index, :show, :edit, :update, :destroy]
-    resources :genres,    only: [:new, :create, :index, :edit, :update, :destroy]
-    resources :composers, only: [:new, :create, :index, :edit, :update, :destroy]
+    resources :genres,    only: [:create, :index, :edit, :update, :destroy]
+    resources :composers, only: [:create, :index, :edit, :update, :destroy]
+    get 'search' => 'searches#search'
   end
 
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
     resources :songs,     only: [:index, :show]
     resources :composers, only: [:index]
     resources :genres,    only: [:index]
+    get 'search' => 'searches#search'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'public/homes#top'

@@ -1,0 +1,24 @@
+<div class="container pb-4">
+  <div class="row mb-5">
+    <div class="w-75 mx-auto">
+      <div class="col w-75 mx-auto">
+        <a href='/admin/songs/new'>
+          <i class="fas fa-plus-circle" style="font-size: 40px;"></i>
+        </a>
+      </div>
+      <div class="col w-75 mx-auto">
+        <% @songs.each do |song| %>
+          <div>
+            <%= song.name %>
+            <%= song.composer.name %>
+            <%= song.genre.name %>
+          </div>
+          <div>
+            <%= link_to '編集', edit_admin_song_path(song), class: 'btn btn-primary' %>
+            <%= link_to '削除', admin_song_path(song),  method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
