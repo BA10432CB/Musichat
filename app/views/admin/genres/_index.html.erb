@@ -1,0 +1,5 @@
+<div class="col">
+  <% genres.each do |genre| %>
+    <li><%= link_to genre.name, genre_path(genre),  class: "text-dark" %></li>
+  <% end %>
+</div>

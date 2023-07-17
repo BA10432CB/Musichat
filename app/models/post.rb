@@ -8,8 +8,12 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :body,  presence: true
   validates :star,  presence: true
-  
+
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
+  end
+
+  def self.looks(search, word)
+    @post = Post.where("title LIKE?","%#{word}%")
   end
 end
