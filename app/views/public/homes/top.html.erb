@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="mx-auto" >
+    <div class="col-7" style="background-image: url(<%= asset_path('top.jpg') %>); background-size: cover; background-repeat: norepeat; background-position: center; height: 600px; width: 100%;"></div>
+    <div class="btn-wrapper col-5 mx-auto">
       <h1>音楽で世界と繋がる</h1>
       <h3>MusiChatをはじめよう</h3>
-      <div class="btn-wrapper col-10 mx-auto">
+      <div class="btn-wrapper mx-auto">
         <div class="row">
           <%= link_to 'アカウント作成', new_user_registration_path, class: 'btn btn-primary sign_up' %>
         </div>
