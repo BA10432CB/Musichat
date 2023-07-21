@@ -42,3 +42,105 @@ ul {
   height: 600px;
   width: 100%;
 }
+
+// ボタンの設定
+.btn-create {
+  background: #7ed957;
+  color: #ffffff;
+  border: 1px solid #478384;
+}
+
+.btn-create:hover, .btn-create:focus,
+.btn-create:active, .btn-create:active:focus, .btn-create:active:hover, .btn-create:active.focus,
+.btn-create.active, .btn-create.active:focus, .btn-create.active:hover, .btn-create.active.focus,
+.open > .dropdown-toggle.btn-create,
+.open > .dropdown-toggle.btn-create:hover,
+.open > .dropdown-toggle.btn-create:focus,
+.open > .dropdown-toggle.btn-create.focus,
+.btn-create.disabled:hover, .btn-create[disabled]:hover, fieldset[disabled] .btn-create:hover,
+.btn-create.disabled:focus, .btn-create[disabled]:focus, fieldset[disabled] .btn-create:focus,
+.btn-create.disabled.focus, .btn-create[disabled].focus, fieldset[disabled] .btn-create.focus {
+  background: #7fff00;
+  color: #ffffff;
+  border: 1px solid#43676b;
+}
+
+.btn-edit {
+  background: #fff000;
+  color: #ffffff;
+  border: 1px solid #478384;
+}
+
+.btn-edit:hover, .btn-edit:focus,
+.btn-edit:active, .btn-edit:active:focus, .btn-edit:active:hover, .btn-edit:active.focus,
+.btn-edit.active, .btn-edit.active:focus, .btn-edit.active:hover, .btn-edit.active.focus,
+.open > .dropdown-toggle.btn-edit,
+.open > .dropdown-toggle.btn-edit:hover,
+.open > .dropdown-toggle.btn-edit:focus,
+.open > .dropdown-toggle.btn-edit.focus,
+.btn-edit.disabled:hover, .btn-edit[disabled]:hover, fieldset[disabled] .btn-edit:hover,
+.btn-edit.disabled:focus, .btn-edit[disabled]:focus, fieldset[disabled] .btn-edit:focus,
+.btn-edit.disabled.focus, .btn-edit[disabled].focus, fieldset[disabled] .btn-edit.focus {
+  background: #ffcc00;
+  color: #ffffff;
+  border: 1px solid #43676b;
+}
+
+.btn-destroy {
+  background: #999;
+  color: #ffffff;
+  border: 1px solid #478384;
+}
+
+.btn-destroy:hover, .btn-destroy:focus,
+.btn-destroy:active, .btn-destroy:active:focus, .btn-destroy:active:hover, .btn-destroy:active.focus,
+.btn-destroy.active, .btn-destroy.active:focus, .btn-destroy.active:hover, .btn-destroy.active.focus,
+.open > .dropdown-toggle.btn-destroy,
+.open > .dropdown-toggle.btn-destroy:hover,
+.open > .dropdown-toggle.btn-destroy:focus,
+.open > .dropdown-toggle.btn-destroy.focus,
+.btn-destroy.disabled:hover, .btn-destroy[disabled]:hover, fieldset[disabled] .btn-destroy:hover,
+.btn-destroy.disabled:focus, .btn-destroy[disabled]:focus, fieldset[disabled] .btn-destroy:focus,
+.btn-destroy.disabled.focus, .btn-destroy[disabled].focus, fieldset[disabled] .btn-destroy.focus {
+  background: #666;
+  color: #ffffff;
+  border: 1px solid #43676b;
+}
+
+.heading {
+  margin-top: 100px;
+}
+
+.heading-text {
+  font-size: 44px;
+}
+
+.top-btn {
+  text-align: center;
+}
+
+.login-text {
+  margin-top: 20px;
+}
+
+// #mask {
+//   background: rgba(0, 0, 0, 0.6);
+//   position: fixed;
+//   inset: 0;
+//   z-index: 9998;
+//   opacity: 0;
+//   visibility: hidden;
+// }
+
+// #sign-in-modal {
+//   background: #fff;
+//   max-width: 36rem;
+//   padding: 2rem;
+//   border-radius: 0.5rem;
+//   position: absolute;
+//   inset: 10rem 0 auto;
+//   margin: auto;
+//   z-index: 9999;
+//   opacity: 0;
+//   visibility: hidden;
+// }
