@@ -1,116 +1,115 @@
-<div class="container" style="padding: 0;">
-  <div class="row">
-    <div class="col-7" style="background-image: url(<%= asset_path('top.jpg') %>); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px; width: 100%;"></div>
-    <div class="btn-wrapper col-5 mx-auto">
-      <div class="row heading">
-        <div class="col-7" style="background-image: url(<%= asset_path('logo.png') %>); background-size: cover; width: 100%; height: 190px; background-repeat: no-repeat; background-position: center"></div>
-        <h1 class="col-5 heading-text">
-          <strong>音楽で</strong><br>
-          <strong>世界と</strong><br>
-          <strong>繋がる</strong>
-        </h1>
-      </div>
-      <div class="top-btn">
-        <h3 class=start-text>MusiChatをはじめよう</h3>
-        <div class="btn btn-create sign_up">
-          <%= link_to "アカウント作成", '', class: "nav-link", "data-toggle": "modal", "data-target": "#signupModal", style: "color: white;" %>
+<div class="row">
+  <div class="col-7" style="background-image: url(<%= asset_path('top.jpg') %>); background-size: cover; background-repeat: no-repeat; background-position: center; height: 650px; width: 100%;"></div>
+  <div class="btn-wrapper col-5 mx-auto">
+    <div class="row heading">
+      <div class="col-7" style="background-image: url(<%= asset_path('logo.png') %>); background-size: cover; width: 100%; height: 220px; background-repeat: no-repeat; background-position: center"></div>
+      <h1 class="col-5 heading-text">
+        <strong>音楽で</strong><br>
+        <strong>世界と</strong><br>
+        <strong>繋がる</strong>
+      </h1>
+    </div>
+    <div class="top-btn needs-validation">
+      <h3 class=start-text>MusiChatをはじめよう</h3>
+      <div class="btn btn-create sign_up">
+        <%= link_to "アカウント作成", '', class: "nav-link", "data-toggle": "modal", "data-target": "#signupModal", style: "color: white;" %>
 
-          <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: 700px;">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;"><%= image_tag 'design.png', :size => '50x50' %><strong style="color: black;">アカウント作成</strong></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                    <%= devise_error_messages! %>
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: 700px;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;"><%= image_tag 'design.png', :size => '50x50' %><strong style="color: black;">アカウント作成</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+                  <%= f.hidden_field :url, value: request.fullpath %>
 
-                    <div class="field">
-                      <label style="color: black;"><strong>アカウント名</strong></label>
-                      <div><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "musichat", size: 25 %></div>
+                  <div class="field">
+                    <label style="color: black;"><strong>アカウント名</strong></label>
+                    <div><%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "musichat", size: 25 %></div>
+                  </div>
+
+                  <div class="field">
+                    <label style="color: black;"><strong>メールアドレス</strong></label>
+                    <div><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "×××@example.com", size: 25 %></div>
+                  </div>
+
+                  <div class="field">
+                    <label style="color: black;"><strong>電話番号</strong></label>
+                    <div><%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "00000000000", size: 25 %></div>
+                  </div>
+
+                  <div class="field">
+                    <label style="color: black;"><strong>パスワード</strong>
+                      <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> 文字以上)</em>
+                      <% end %>
+                    </label>
+                    <div>
+                      <%= f.password_field :password, autocomplete: "new-password", size: 25 %>
                     </div>
+                  </div>
 
-                    <div class="field">
-                      <label style="color: black;"><strong>メールアドレス</strong></label>
-                      <div><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "×××@example.com", size: 25 %></div>
-                    </div>
+                  <div class="field">
+                    <label style="color: black;"><strong>パスワード確認</strong></label>
+                    <div><%= f.password_field :password_confirmation, autocomplete: "new-password", size: 25 %></div>
+                  </div>
 
-                    <div class="field">
-                      <label style="color: black;"><strong>電話番号</strong></label>
-                      <div><%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", placeholder: "00000000000", size: 25 %></div>
-                    </div>
-
-                    <div class="field">
-                      <label style="color: black;"><strong>パスワード</strong>
-                        <% if @minimum_password_length %>
-                        <em>(<%= @minimum_password_length %> 文字以上)</em>
-                        <% end %>
-                      </label>
-                      <div>
-                        <%= f.password_field :password, autocomplete: "new-password", size: 25 %>
-                      </div>
-                    </div>
-
-                    <div class="field">
-                      <label style="color: black;"><strong>パスワード確認</strong></label>
-                      <div><%= f.password_field :password_confirmation, autocomplete: "new-password", size: 25 %></div>
-                    </div>
-
-                    <div style="margin-top: 10px">
-                      <div><%= f.submit "アカウント作成", class: "btn btn-create sign_up" %></div>
-                    </div>
-                  <% end %>
-                </div>
+                  <div style="margin-top: 10px;">
+                    <div><%= f.submit "アカウント作成", class: "btn btn-create sign_up" %></div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="login-text">
-          <p><strong>アカウントをお持ちの場合</strong></p>
+      <div class="login-text">
+        <p><strong>アカウントをお持ちの場合</strong></p>
+      </div>
+      <div>
+        <div class="btn btn-light sign_in">
+          <%= link_to "ログイン", '', class: "nav-link", "data-toggle": "modal", "data-target": "#signinModal", style: "color: black;" %>
         </div>
-        <div>
-          <div class="btn btn-light sign_in">
-            <%= link_to "ログイン", '', class: "nav-link", "data-toggle": "modal", "data-target": "#signinModal", style: "color: black;" %>
-          </div>
 
-          <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: 700px;">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;"><%= image_tag 'design.png', :size => '50x50' %><strong>ログイン</strong></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <!-- ここからフォーム -->
-                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="height: 700px;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="text-align: center;"><%= image_tag 'design.png', :size => '50x50' %><strong>ログイン</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <%= f.hidden_field :url, value: request.fullpath %>
+                  <div class="field">
+                    <label><strong>メールアドレス</strong></label>
+                    <div><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
+                  </div>
+
+                  <div class="field">
+                    <label><strong>パスワード</strong></label>
+                    <div><%= f.password_field :password, autocomplete: "current-password" %></div>
+                  </div>
+
+                  <% if devise_mapping.rememberable? %>
                     <div class="field">
-                      <label><strong>メールアドレス</strong></label>
-                      <div><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
-                    </div>
-
-                    <div class="field">
-                      <label><strong>パスワード</strong></label>
-                      <div><%= f.password_field :password, autocomplete: "current-password" %></div>
-                    </div>
-
-                    <% if devise_mapping.rememberable? %>
-                      <div class="field">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label :remember_me %>
-                      </div>
-                    <% end %>
-
-                    <div class="actions">
-                      <%= f.submit "ログイン", class: "btn btn-create sign_in" %>
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
                     </div>
                   <% end %>
-                </div>
+
+                  <div class="actions">
+                    <%= f.submit "ログイン", class: "btn btn-create sign_in" %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
