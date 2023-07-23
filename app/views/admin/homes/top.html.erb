@@ -1,37 +1,41 @@
-<div class="container mt-4 pb-5">
-  <h2>管理画面</h2>
-  <div class="row">
-    <div class="ol">
-      <span>
-        <%= link_to admin_users_path, class: 'box' do %>
-          <i class="fas fa-users"></i>
-          <p>ユーザ一覧</p>
-        <% end %>
-      </span>
-      <span>
-        <%= link_to admin_posts_path, class: 'box' do %>
-          <i class="fas fa-newspaper"></i>
-          <p>投稿一覧</p>
-        <% end %>
-      </span>
-      <span>
-        <%= link_to admin_songs_path, class: 'box' do %>
-          <i class="fas fa-music"></i>
-          <p>曲名一覧</p>
-        <% end %>
-      </span>
-      <span>
-        <%= link_to admin_genres_path, class: 'box' do %>
-          <i class="fas fa-guitar"></i>
-          <p>ジャンル一覧</p>
-        <% end %>
-      </span>
-      <span>
-        <%= link_to admin_composers_path, class: 'box' do %>
-          <i class="fas fa-feather-alt"></i>
-          <p>作曲者一覧</p>
-        <% end %>
-      </span>
-    </div>
+<div class="row admin-menu">
+  <h2 class="col-12 admin-top-title" style="font-size: 50px; padding: 15px 0 15px 15px; border-bottom: solid 1px gray;">管理画面</h2>
+</div>
+<div class="row mb-5">
+  <div class="col-1"></div>
+  <div class="col-4 btn btn-admin">
+    <%= link_to admin_users_path, class: 'box', style: 'text-decoration: none;' do %>
+      <i class="fas fa-users" style="color: #2391ff; padding-top: 18px"></i>
+      <p style="color: #2391ff; font-size: 20px;">ユーザ一覧</p>
+    <% end %>
+  </div>
+  <div class="col-2"></div>
+  <div class="col-4 btn btn-admin">
+    <%= link_to admin_posts_path, class: 'box', style: 'text-decoration: none;' do %>
+      <i class="fas fa-newspaper" style="color: #2391ff; padding-top: 18px"></i>
+      <p style="color: #2391ff; font-size: 20px;">投稿一覧</p>
+    <% end %>
+  </div>
+</div>
+<div class="row justify-content-around">
+  <div class="col-3 btn btn-admin">
+    <%= link_to admin_songs_path, class: 'box', style: 'text-decoration: none;' do %>
+      <i class="fas fa-music" style="color: #2391ff; padding-top: 18px"></i>
+      <p style="color: #2391ff; font-size: 20px;">曲名一覧</p>
+    <% end %>
+  </div>
+  <div class="col-1"></div>
+  <div class="col-3 btn btn-admin">
+    <%= link_to admin_genres_path, class: 'box', style: 'text-decoration: none;' do %>
+      <i class="fas fa-guitar" style="color: #2391ff; padding-top: 18px"></i>
+      <p style="color: #2391ff; font-size: 20px;">ジャンル一覧</p>
+    <% end %>
+  </div>
+  <div class="col-1"></div>
+  <div class="col-3 btn btn-admin">
+    <%= link_to admin_composers_path, class: 'box', style: 'text-decoration: none;' do %>
+      <i class="fas fa-feather-alt" style="color: #2391ff; padding-top: 18px"></i>
+      <p style="color: #2391ff; font-size: 20px;">作曲者一覧</p>
+    <% end %>
   </div>
 </div>

@@ -5,6 +5,7 @@ class Public::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @genres = Genre.all
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
@@ -34,6 +35,6 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :star, :image)
+    params.require(:post).permit(:title, :body, :star, :image, :genre_id)
   end
 end

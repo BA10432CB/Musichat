@@ -4,6 +4,12 @@ class Public::UsersController < ApplicationController
     @posts = @user.posts
   end
 
+  def favorite
+    @user = User.find(params[:id])
+    favorites= Favorite.where(user_id: @user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+  end
+
   def edit
     @user = User.find(params[:id])
     unless @user == current_user

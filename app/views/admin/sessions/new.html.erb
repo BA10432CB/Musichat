@@ -1,26 +1,19 @@
-<h2>Log in</h2>
-
+<div style="background-image: url(<%= asset_path('logo.png') %>); background-size: cover; width: 220px; height: 160px; background-repeat: no-repeat; background-position: center; margin: 0 auto;"></div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+  <div class="admin-login">
+    <h2 class="admin-login">管理者ログイン</h2>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <label><strong>メールアドレス</strong></label>
+      <div><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="field">
+      <label><strong>パスワード</strong></label>
+      <div><%= f.password_field :password, autocomplete: "current-password" %></div>
+    </div>
+
+    <div class="actions" style="padding-top: 10px;">
+      <%= f.submit "ログイン", class: 'btn btn-create sign_up' %>
+    </div>
   </div>
 <% end %>
-
-<%= render "admin/shared/links" %>

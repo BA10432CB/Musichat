@@ -15,7 +15,7 @@ main {
 }
 
 .side {
-  border-right: solid 4px black;
+  border-right: solid 2px gray;
   padding: 0;
 }
 
@@ -68,7 +68,7 @@ ul {
 .btn-create.disabled.focus, .btn-create[disabled].focus, fieldset[disabled] .btn-create.focus {
   background: #7fff00;
   color: #ffffff;
-  border: 1px solid#43676b;
+  border: 1px solid #43676b;
 }
 
 .btn-edit {
@@ -113,6 +113,28 @@ ul {
   border: 1px solid #43676b;
 }
 
+.btn-admin {
+  background: #fff;
+  color: #6666ff;
+  border: 1px solid #7ed957;
+  height: 100px;
+}
+
+.btn-admin:hover, .btn-admin:focus,
+.btn-admin:active, .btn-admin:active:focus, .btn-admin:active:hover, .btn-admin:active.focus,
+.btn-admin.active, .btn-admin.active:focus, .btn-admin.active:hover, .btn-admin.active.focus,
+.open > .dropdown-toggle.btn-admin,
+.open > .dropdown-toggle.btn-admin:hover,
+.open > .dropdown-toggle.btn-admin:focus,
+.open > .dropdown-toggle.btn-admin.focus,
+.btn-admin.disabled:hover, .btn-admin[disabled]:hover, fieldset[disabled] .btn-admin:hover,
+.btn-admin.disabled:focus, .btn-admin[disabled]:focus, fieldset[disabled] .btn-admin:focus,
+.btn-admin.disabled.focus, .btn-admin[disabled].focus, fieldset[disabled] .btn-admin.focus {
+  background: #f4f4f4;
+  color: #6666ff;
+  border: 2px solid #7fff00;
+}
+
 .heading {
   margin-top: 100px;
 }
@@ -130,7 +152,7 @@ ul {
 }
 
 .search-form {
-  border-left: solid 4px black;
+  border-left: solid 2px gray;
 }
 
 .profile-content {
@@ -145,6 +167,7 @@ ul {
 
 .post-content {
   border-bottom: solid 2px gray;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -163,4 +186,8 @@ ul {
 
 .post-comment {
   padding-top: 5px;
+}
+
+.admin-login {
+  text-align: center;
 }
