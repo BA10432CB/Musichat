@@ -1,13 +1,13 @@
-<div class="col w-75 mx-auto">
-  <% posts.each do |post| %>
-    <div>
-      <%= link_to post_path(post) do %>
-        <%= image_tag post.image, size: '200x200' %>
-        <span>
-          <%= post.title %>
-          <%= post.body %>
-        </span>
-      <% end %>
+<% posts.each do |post| %>
+  <%= link_to post_path(post), class: "post-link" do %>
+  <div class="row my-post">
+    <div class="col-3">
+      <%= image_tag post.image, size: '200x200' %>
     </div>
+    <div class="col-9">
+      <p><%= post.title %></p>
+      <p><%= post.body %></p>
+    </div>
+  </div>
   <% end %>
-</div>
+<% end %>

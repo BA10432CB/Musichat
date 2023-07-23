@@ -1,5 +1,11 @@
 @use '~bootstrap/scss/bootstrap';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 main {
   width: 100%;
 }
@@ -129,9 +135,32 @@ ul {
 
 .profile-content {
   padding-top: 5px;
+  background-color: #efffe0;
+  border-bottom: solid 2px gray;
+}
+
+.profile-image {
+  border-radius: 50%;
 }
 
 .post-content {
   border-bottom: solid 2px gray;
   padding-bottom: 10px;
+}
+
+.post-content:last-child {
+  border: none;
+}
+
+.my-post {
+  padding: 5px 0 5px 10px;
+  border-bottom: solid 2px gray;
+}
+
+.my-post-item {
+  padding-bottom: 5px;
+}
+
+.post-comment {
+  padding-top: 5px;
 }

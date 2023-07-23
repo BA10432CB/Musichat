@@ -1,23 +1,26 @@
 <% posts.each do |post| %>
-  <div class="row profile-content">
-    <div class="col-12">
-      <%= link_to user_path(post.user) do %>
-        <%= image_tag post.user.get_profile_image, size: '50x50' %>
-        <%= post.user.name %>
-      <% end %>
+    <div class="row profile-content">
+      <div class="col-12">
+        <%= link_to user_path(post.user) do %>
+          <%= image_tag post.user.get_profile_image, size: '50x50' %>
+          <%= post.user.name %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="row post-content">
-    <div class="col-3"><%= image_tag post.image, size: '200x200' %></div>
-    <div class="col-6">
-      <%= post.title %><br>
-      <%= post.body %><br>
-      <%= render 'static_rate', post: post %>
+    <div class="row post-content">
+      <div class="col-3">
+        <%= link_to post_path(post) do %>
+          <%= image_tag post.image, size: '200x200' %></div>
+        <% end %>
+      <div class="col-6">
+        <%= link_to post_path(post) do %>
+          <%= post.title %><br>
+          <%= post.body %><br>
+          <%= render 'static_rate', post: post %>
+        <% end %>
+      </div>
+      <div class="col-1">
+        <%= render 'favorite', post: post %>
+      </div>
     </div>
-    <div class="col-1">
-      <%= render 'favorite', post: post %>
-    </div>
-    <%= link_to post_path(post) do %>
-    <% end %>
-  </div>
 <% end %>

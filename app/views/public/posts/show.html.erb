@@ -1,31 +1,25 @@
-<div class="container mt-4 pb-5">
-  <div class="row">
-    <div class="col">
-      <div>
-        <%= link_to user_path(@post.user) do %>
-          <%= image_tag @post.user.get_profile_image, size: '80x80' %>
-          <%= @post.user.name %>
-        <% end %>
-      </div>
-      <div>
-        <%= link_to post_path(@post) do %>
-          <%= image_tag @post.image, size: '200x200' %>
-          <span>
-            <%= @post.title %>
-            <%= @post.body %>
-          </span>
-        <%= render 'static_rate', post: @post %>
-        <% end %>
-      </div>
-      <div>
-        <%= form_with model: [@post, @post_comment], local: true do |f| %>
-          <%= f.text_area :comment, rows: 5, placeholder: "コメント" %>
-          <%= f.submit "コメント" %>
-        <% end %>
-      </div>
-      <div>
-        <%= render 'comment_flame', post: @post %>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-12">
+    <%= link_to user_path(@post.user) do %>
+      <%= image_tag @post.user.get_profile_image, size: '80x80' %>
+      <%= @post.user.name %>
+      <% end %>
   </div>
 </div>
+<div class="row md-5">
+  <div class="col-3">
+    <%= image_tag @post.image, size: '200x200' %>
+  </div>
+  <div class="col-4">
+    <%= @post.title %><br>
+    <%= @post.body %><br>
+    <%= render 'static_rate', post: @post %>
+  </div>
+  <div class="col-5 align-self-end">
+    <%= form_with model: [@post, @post_comment], local: true do |f| %>
+      <%= f.text_area :comment, rows: 5, placeholder: "コメント", class: 'w-120' %>
+      <%= f.submit "コメント", class: 'btn btn-create' %>
+    <% end %>
+  </div>
+</div>
+<%= render 'comment_flame', post: @post %>

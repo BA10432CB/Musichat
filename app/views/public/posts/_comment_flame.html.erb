@@ -1,11 +1,16 @@
 <% post.post_comments.each do |post_comment| %>
-  <div>
-    <%= link_to user_path(post_comment.user) do %>
-      <%= image_tag post_comment.user.get_profile_image, size: '80x80' %>
-      <%= post_comment.user.name %>
-    <% end %>
-  </div>
-  <div>
-    <%= post_comment.comment %>
+  <div class="row post-comment">
+    <div class="col-1"></div>
+    <div class="col-2 pr-0">
+      <%= link_to user_path(post_comment.user) do %>
+        <%= image_tag post_comment.user.get_profile_image, size: '80x80' %>
+      <% end %>
+    </div>
+    <div class="col-5 pl-0 post-comment-content">
+      <%= link_to user_path(post_comment.user) do %>
+        <%= post_comment.user.name %>
+      <% end %><br>
+      <%= post_comment.comment %>
+    </div>
   </div>
 <% end %>
