@@ -6,6 +6,9 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @genres = Genre.all
+    url = params[:post][:song_url]
+    url = url.last(11)
+    @post.song_url = url
     @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path

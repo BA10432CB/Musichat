@@ -4,6 +4,8 @@ class Admin::SongsController < ApplicationController
 
   def new
     @song = Song.new
+    @song.valid?
+    @song.errors.full_messages
   end
 
   def create

@@ -10,12 +10,14 @@
   <div class="col-3">
     <%= image_tag @post.image, size: '200x200' %>
   </div>
-  <div class="col-4">
+  <div class="col-5">
     <%= @post.title %><br>
     <%= @post.body %><br>
     <%= render 'static_rate', post: @post %>
+    <strong>YouTube:</strong>
+    <iframe width="336" height="189" src="https://www.youtube.com/embed/<%= @post.song_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
-  <div class="col-5 align-self-end">
+  <div class="col-4 align-self-end">
     <%= form_with model: [@post, @post_comment], local: true do |f| %>
       <%= f.text_area :comment, rows: 5, placeholder: "コメント", class: 'w-120' %>
       <%= f.submit "コメント", class: 'btn btn-create' %>

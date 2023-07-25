@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :composers, only: [:index]
     resources :genres,    only: [:index, :show]
     get 'search' => 'searches#search'
+    post 'guest_sign_in', to: 'sessions#guest_sign_in'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'public/homes#top'
