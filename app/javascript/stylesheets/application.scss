@@ -72,7 +72,7 @@ ul {
 }
 
 .btn-edit {
-  background: #fff000;
+  background: #fff352;
   color: #ffffff;
   border: 1px solid #478384;
 }
@@ -185,9 +185,17 @@ ul {
 }
 
 .post-comment {
-  padding-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .admin-login {
   text-align: center;
+}
+
+.admin-title {
+  font-size: 50px;
+  padding: 15px 0 15px 15px;
+  border-bottom: solid 1px gray;
+  margin-bottom: 0;
 }

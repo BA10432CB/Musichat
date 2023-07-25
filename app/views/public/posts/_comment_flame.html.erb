@@ -1,12 +1,11 @@
 <% post.post_comments.each do |post_comment| %>
-  <div class="row post-comment">
-    <div class="col-1"></div>
-    <div class="col-2 pr-0">
+  <div class="row post-comment justify-content-center" style="border: solid 1px gray; margin: 0 200px; margin-top: 2.5px; margin-bottom: 2.5px;">
+    <div class="col-2" style="padding-left: 0;">
       <%= link_to user_path(post_comment.user) do %>
-        <%= image_tag post_comment.user.get_profile_image, size: '80x80' %>
+        <%= image_tag post_comment.user.get_profile_image, size: '80x80', class: 'profile-image' %>
       <% end %>
     </div>
-    <div class="col-5 pl-0 post-comment-content">
+    <div class="col-10 post-comment-content">
       <%= link_to user_path(post_comment.user) do %>
         <%= post_comment.user.name %>
       <% end %><br>

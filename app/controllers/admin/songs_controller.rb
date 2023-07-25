@@ -1,8 +1,10 @@
 class Admin::SongsController < ApplicationController
-  before_action :set_select_genres
-  before_action :set_select_composers
+  # before_action :set_select_genres
+  # before_action :set_select_composers
 
   def new
+    @genres = Genre.all
+    @composers = Composer.all
     @song = Song.new
   end
 
@@ -16,6 +18,8 @@ class Admin::SongsController < ApplicationController
   end
 
   def index
+    @genres = Genre.all
+    @composers = Composer.all
     @songs = Song.all
     @song = Song.new
   end
@@ -25,6 +29,8 @@ class Admin::SongsController < ApplicationController
   end
 
   def edit
+    @genres = Genre.all
+    @composers = Composer.all
     @song = Song.find(params[:id])
   end
 
@@ -33,7 +39,7 @@ class Admin::SongsController < ApplicationController
     if @song.update(song_params)
       redirect_to admin_songs_path
     else
-      render 'update'
+      render 'edit'
     end
   end
 
@@ -49,11 +55,11 @@ class Admin::SongsController < ApplicationController
     params.require(:song).permit(:name, :genre_id, :composer_id)
   end
 
-  def set_select_genres
-    @genres = Genre.all.map {|genre| [genre.name, genre.id] }.unshift(["--選択してください--", nil])
-  end
+#   def set_select_genres
+#     @genres = Genre.all.map {|genre| [genre.name, genre.id] }.unshift(["--選択してください--", nil])
+#   end
 
-  def set_select_composers
-    @composers = Composer.all.map {|composer| [composer.name, composer.id] }.unshift(["--選択してください--", nil])
-  end
+#   def set_select_composers
+#     @composers = Composer.all.map {|composer| [composer.name, composer.id] }.unshift(["--選択してください--", nil])
+#   end
 end

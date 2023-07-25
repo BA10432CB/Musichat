@@ -1,15 +1,18 @@
-<div class="container mt-4 pb-5">
-  <div class="row profile">
-    <div class="col">
-      <div><%= image_tag @user.get_profile_image, size: '100x100' %></div>
-      <div>
-        <%= @user.name %>
+<div class="row profile-content">
+  <div class="col-2">
+    <%= image_tag @user.get_profile_image, size: '100x100', class: 'profile-image' %>
+  </div>
+  <div class="col-10">
+    <div class="row">
+      <div class="col-2"><%= @user.name %></div>
+      <div class="col-6"></div>
+      <div class="col-4"><%= link_to 'プロフィール編集', edit_admin_user_path(@user), class: "btn btn-secondary" %></div>
+    </div>
+    <div class="row">
+      <div class="col-10">
         <%= @user.introduction %>
       </div>
-      <div><%= link_to '編集', edit_admin_user_path(@user), class: "btn btn-secondary" %></div>
-    </div>
-    <div class="col">
-      <%= render 'post_flame', posts: @posts %>
     </div>
   </div>
 </div>
+<%= render 'post_flame', posts: @posts %>

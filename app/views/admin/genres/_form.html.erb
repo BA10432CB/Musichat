@@ -1,7 +1,9 @@
 <%= form_with model: [:admin, genre], local: true do |f| %>
-  <div class="form-group row mt-5">
-    <%= f.label :name, "ジャンル名", class: "col-4 col-form-label" %>
+  <div class="form-group col mt-4">
+    <%= f.label :name, "ジャンル名"%><br>
     <%= f.text_field :name %>
   </div>
-  <%= f.submit 'ジャンル登録' %>
+  <div style="text-align: right;">
+    <%= f.submit 'ジャンル登録', class: 'btn btn-create' %>
+  </div>
 <% end %>

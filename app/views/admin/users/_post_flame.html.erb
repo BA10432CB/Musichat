@@ -1,11 +1,13 @@
 <% posts.each do |post| %>
-  <div>
-    <%= link_to admin_post_path(post) do %>
+  <%= link_to admin_post_path(post), class: "post-link" do %>
+  <div class="row my-post">
+    <div class="col-3">
       <%= image_tag post.image, size: '200x200' %>
-      <span>
-        <%= post.title %>
-        <%= post.body %>
-      </span>
-    <% end %>
+    </div>
+    <div class="col-9">
+      <p><%= post.title %></p>
+      <p><%= post.body %></p>
+    </div>
   </div>
+  <% end %>
 <% end %>
