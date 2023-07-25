@@ -3,8 +3,6 @@ class Admin::SongsController < ApplicationController
   # before_action :set_select_composers
 
   def new
-    @genres = Genre.all
-    @composers = Composer.all
     @song = Song.new
   end
 
