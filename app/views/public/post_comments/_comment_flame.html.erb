@@ -14,6 +14,8 @@
     <div class="col-2 mt-2">
       <% if post_comment.user == current_user %>
         <%= link_to '削除', post_post_comment_path(post, post_comment),  method: :delete, remote: true, data: {"turbolinks" => false}, class: 'btn btn-destroy' %>
+      <% elsif admin_signed_in? %>
+        <%= link_to '削除', post_post_comment_path(post, post_comment),  method: :delete, remote: true, data: {"turbolinks" => false}, class: 'btn btn-destroy' %>
       <% end %>
     </div>
   </div>
