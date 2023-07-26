@@ -2,8 +2,9 @@ class Admin::ComposersController < ApplicationController
   def create
     @composer = Composer.new(composer_params)
     if @composer.save
-      redirect_to admin_composers_path, notice: "作曲者名を登録しました。"
+      redirect_to admin_composers_path
     else
+      @composers = Composer.all
       render 'index'
     end
   end

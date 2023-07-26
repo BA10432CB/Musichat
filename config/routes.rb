@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     end
     resources :posts,     only: [:new, :create, :index, :show, :destroy] do
       resource  :favorites,     only: [:create, :destroy]
-      resources :post_comments, only: [:create]
+      resources :post_comments, only: [:create, :destroy]
     end
     resources :songs,     only: [:index, :show]
     resources :composers, only: [:index]

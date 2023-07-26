@@ -1,6 +1,6 @@
 <% posts.each do |post| %>
   <div class="row profile-content">
-    <div class="col-12">
+    <div class="col-12 mb-1">
       <%= link_to admin_user_path(post.user) do %>
         <%= image_tag post.user.get_profile_image, size: '50x50', class: 'profile-image' %>
         <%= post.user.name %>
@@ -10,8 +10,9 @@
   <div class="row post-content">
     <div class="col-3">
       <%= link_to admin_post_path(post) do %>
-        <%= image_tag post.image, size: '200x200' %></div>
+        <%= image_tag post.image, size: '200x200' %>
       <% end %>
+    </div>
     <div class="col-6">
       <%= link_to admin_post_path(post) do %>
         <%= post.title %><br>

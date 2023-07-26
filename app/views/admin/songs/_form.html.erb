@@ -11,5 +11,5 @@
     <%= f.label :genre, "ジャンル", class: "col-4 col-form-label" %>
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {prompt: '--選択してください--' }, {class: 'form-select'}) %>
   </div>
-  <%= f.submit '登録' %>
+  <%= f.submit '登録', class: 'btn btn-create' %>
 <% end %>

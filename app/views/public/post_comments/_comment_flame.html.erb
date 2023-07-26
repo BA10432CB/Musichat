@@ -5,11 +5,16 @@
         <%= image_tag post_comment.user.get_profile_image, size: '80x80', class: 'profile-image' %>
       <% end %>
     </div>
-    <div class="col-10 post-comment-content">
+    <div class="col-8 post-comment-content">
       <%= link_to user_path(post_comment.user) do %>
         <%= post_comment.user.name %>
       <% end %><br>
       <%= post_comment.comment %>
+    </div>
+    <div class="col-2 mt-2">
+      <% if post_comment.user == current_user %>
+        <%= link_to '削除', post_post_comment_path(post, post_comment),  method: :delete, remote: true, data: {"turbolinks" => false}, class: 'btn btn-destroy' %>
+      <% end %>
     </div>
   </div>
 <% end %>
