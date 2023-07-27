@@ -14,7 +14,7 @@
     <% else %>
       <h3>ユーザ検索結果: "<%= @word %>"</h3>
       <h4>ユーザ一覧</h4>
-      <%= render 'admin/users/flame', users: @users %>
+      <%= render 'users_get', users: @users %>
     <% end %>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">

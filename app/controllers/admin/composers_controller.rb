@@ -1,4 +1,6 @@
 class Admin::ComposersController < ApplicationController
+  before_action :authenticate_admin!
+
   def create
     @composer = Composer.new(composer_params)
     if @composer.save

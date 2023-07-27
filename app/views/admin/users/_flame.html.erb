@@ -1,8 +1,8 @@
 <div style="display: flex; flex-wrap: wrap;">
   <% users.each do |user| %>
-    <div style="border: solid 0.5px gray; border-radius: 5%; margin-right: 40px; margin-top: 5px">
+    <div style="border: solid 0.5px gray; border-radius: 10px; margin-right: 40px; margin-top: 5px; text-align: center;">
       <%= link_to admin_user_path(user) do %>
-        <%= image_tag user.get_profile_image, size: '100x100', class: 'profile-image' %><br>
+        <%= image_tag user.get_profile_image, size: '100x100', class: 'search-profile-image' %><br>
         <%= user.name %>
       <% end %>
     </div>

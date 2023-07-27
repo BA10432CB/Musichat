@@ -1,6 +1,5 @@
 class Admin::SongsController < ApplicationController
-  # before_action :set_select_genres
-  # before_action :set_select_composers
+  before_action :authenticate_admin!
 
   def new
     @song = Song.new

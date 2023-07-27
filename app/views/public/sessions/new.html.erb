@@ -1,19 +1,15 @@
-<div class="container mt-4 pb-5">
-  <h2 class="mb-5 mt-5">ログイン</h2>
-
+<div style="background-image: url(<%= asset_path('logo.png') %>); background-size: cover; width: 220px; height: 160px; background-repeat: no-repeat; background-position: center; margin: 0 auto;"></div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="row mb-6 field">
-      <label class="col-lg-2">メールアドレス</label>
-      <div class="col-lg-4">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+    <div class="admin-login">
+    <h2 class="admin-login">ログイン</h2>
+    <div class="field">
+      <label><strong>メールアドレス</strong></label>
+      <div><%= f.email_field :email, autofocus: true, autocomplete: "email" %></div>
     </div>
 
-    <div class="row mb-6 field">
-      <label class="col-lg-2">パスワード</label>
-      <div class="col-lg-4">
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
+    <div class="field">
+      <label><strong>パスワード</strong></label>
+      <div><%= f.password_field :password, autocomplete: "current-password" %></div>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -23,8 +19,8 @@
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "ログイン" %>
+    <div class="actions" style="padding-top: 10px;">
+      <%= f.submit "ログイン", class: 'btn btn-create sign_up' %>
     </div>
   <% end %>
 
