@@ -13,10 +13,8 @@
       <h4 class="pb-5">検索結果はありません</h4>
     <% else %>
       <h3>ユーザ検索結果: "<%= @word %>"</h3>
-      <h4><span>ユーザ一覧</span></h4>
-      <div class="row justify-content-between">
-        <%= render 'public/searches/users_get', users: @users %>
-      </div>
+      <h4>ユーザ一覧</h4>
+      <%= render 'admin/users/flame', users: @users %>
     <% end %>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -25,10 +23,8 @@
       <h4 class="pb-5">検索結果はありません</h4>
     <% else %>
       <h3>投稿検索結果: "<%= @word %>"</h3>
-      <h4><span>投稿一覧</span></h4>
-      <div class="row justify-content-between">
-        <%= render 'public/searches/posts_get', posts: @posts %>
-      </div>
+      <h4>投稿一覧</h4>
+      <%= render 'public/posts/flame', posts: @posts %>
     <% end %>
   </div>
 </div>

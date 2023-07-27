@@ -16,11 +16,11 @@
       <%= link_to post_path(post) do %>
         <%= post.title %><br>
         <%= post.body %><br>
-        <%= render 'static_rate', post: post %>
+        <%= render 'public/posts/static_rate', post: post %>
       <% end %>
     </div>
-    <div class="col-1">
-      <%= render 'favorite', post: post %>
+    <div class="col-1" id="bookmark-<%= post.id %>">
+      <%= render 'public/favorites/favorite', post: post %>
     </div>
   </div>
 <% end %>

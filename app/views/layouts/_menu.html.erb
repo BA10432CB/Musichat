@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-  <div class="col-1 text-center side">
+  <div class="col-1 text-center side" style="z-index: 1500;">
     <div class="side-menu">
       <ul class="side-bar mx-auto">
-        <li>
-          <a href='/posts' class="menu"><%= image_tag 'design02.png', :size => '50x50' %></a>
+        <li class="menu">
+          <%= image_tag current_user.get_profile_image, size: '50x50', class: 'profile-image' %>
         </li>
         <li>
           <%= link_to posts_path, class: 'menu' do %>
@@ -21,17 +21,25 @@
           <% end %>
         </li>
         <li>
-          <a href='/posts/new' class="menu"><%= image_tag 'post02.png', :size => '50x50' %></a>
+          <%= link_to new_post_path, class: 'menu' do %>
+            <i class="fab fa-itunes-note btn btn-create" style="font-size: 40px;"></i>
+          <% end %>
         </li>
         <li>
           <%= link_to user_path(current_user), class: 'menu' do %>
-            <i class="fas fa-comments" style="font-size: 40px;"></i>
           <% end %>
         </li>
         <li>
-          <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-light sign_out' do %>
-            <i class="fas fa-sign-out-alt"></i>
-          <% end %>
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+            <div class="dropdown-menu">
+              <%= link_to '退会', user_unsubscribe_path, class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item sign_out' %>
+            </div>
+          </div>
         </li>
       </ul>
     </div>

@@ -17,6 +17,7 @@ main {
 .side {
   border-right: solid 2px gray;
   padding: 0;
+  // height: 100vh;
 }
 
 ul {
@@ -163,6 +164,7 @@ ul {
 
 .profile-image {
   border-radius: 50%;
+  border: solid 2.5px #7ed957;
 }
 
 .post-content {

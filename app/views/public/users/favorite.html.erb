@@ -19,8 +19,8 @@
         <%= render 'public/posts/static_rate', post: post %>
       <% end %>
     </div>
-    <div class="col-1">
-      <%= render 'public/posts/favorite', post: post %>
+    <div class="col-1" id="bookmark-<%= post.id %>">
+      <%= render 'public/favorites/favorite', post: post %>
     </div>
   </div>
 <% end %>

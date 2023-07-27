@@ -8,7 +8,9 @@
       <div class="col-6"></div>
       <div class="col-4">
         <% unless @user.guest_user? %>
+          <% if @user.id == current_user.id %>
             <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-secondary" %>
+          <% end %>
         <% end %>
       </div>
     </div>

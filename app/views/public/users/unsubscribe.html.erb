@@ -1,0 +1,11 @@
+<div class="row flex-column text-center">
+  <div style="margin-top: 25px;">
+    <%= image_tag @user.get_profile_image, size: '150x150', class: 'profile-image' %><br>
+    <%= @user.name %>
+  </div>
+  <h4 class="mt-4"><strong>本当に退会しますか？</strong></h4>
+  <div class="button-field mt-4 mb-4">
+    <%= link_to "退会しない", posts_path, class: 'btn btn-destroy' %>&emsp;
+    <%= link_to "退会する", user_withdrawal_path, method: :patch, class: 'btn btn-light' %>
+    </div>
+</div>
