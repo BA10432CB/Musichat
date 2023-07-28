@@ -1,7 +1,7 @@
 <%= form_with model: user, method: :patch, local: true do |f| %>
   <div class="form-group row mt-5">
     <%= f.label :name, "アカウント名", class: "col-4 col-form-label" %>
-    <%= f.text_field :name s%>
+    <%= f.text_field :name %>
   </div>
   <div class="form-group row mt-5">
     <%= f.label :profile_image, "プロフィール画像", class: "col-4 col-form-label" %>
