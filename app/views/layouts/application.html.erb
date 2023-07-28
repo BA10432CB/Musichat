@@ -35,9 +35,6 @@
                 <%= f.text_field :word %>
                 <%= f.submit "検索", class: "btn-sm" %>
               <% end %>
-              <div>
-                <%= render 'admin/genres/index', genres: @genres %>
-              </div>
             </div>
           <% elsif user_signed_in? %>
             <div class="col-3 search-form">
