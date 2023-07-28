@@ -1,13 +1,27 @@
 <% posts.each do |post| %>
-  <%= link_to post_path(post), class: "post-link" do %>
   <div class="row my-post">
     <div class="col-3">
-      <%= image_tag post.get_post_image, size: '200x200' %>
+      <%= link_to post_path(post), class: "post-link" do %>
+        <%= image_tag post.get_post_image, size: '200x200' %>
+      <% end %>
     </div>
-    <div class="col-9">
-      <p><%= post.title %></p>
-      <p><%= post.body %></p>
-    </div>
+    <% if post.user == current_user %>
+      <div class="col-6">
+        <%= link_to post_path(post), class: "post-link" do %>
+          <p><%= post.title %></p>
+          <p><%= post.body %></p>
+        <% end %>
+      </div>
+      <div class="col-3">
+        <%= link_to '削除', post_path(post), method: :delete, data: { confirm: '本当に消しますか？' }, class: 'btn btn-destroy' %>
+      </div>
+    <% else %>
+      <div class="col-9">
+        <%= link_to post_path(post), class: "post-link" do %>
+          <p><%= post.title %></p>
+          <p><%= post.body %></p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 <% end %>

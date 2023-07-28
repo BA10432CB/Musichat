@@ -34,7 +34,7 @@ class Public::PostsController < ApplicationController
       redirect_to posts_path
     end
     @post.destroy
-    redirect_to posts_path
+    redirect_to user_path(@post.user)
   end
 
   private
