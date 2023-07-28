@@ -18,4 +18,8 @@ class Post < ApplicationRecord
   def self.looks(search, word)
     @post = Post.where("title LIKE?","%#{word}%")
   end
+
+  def get_post_image
+    (image.attached?) ? image : 'no_image.png'
+  end
 end

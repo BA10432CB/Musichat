@@ -10,7 +10,7 @@
   <div class="row post-content">
     <div class="col-3">
       <%= link_to post_path(post) do %>
-        <%= image_tag post.image, size: '200x200' %>
+        <%= image_tag post.get_post_image, size: '200x200' %>
       <% end %>
     </div>
     <div class="col-6">

@@ -2,7 +2,7 @@
   <%= link_to admin_post_path(post), class: "post-link" do %>
   <div class="row my-post">
     <div class="col-3">
-      <%= image_tag post.image, size: '200x200' %>
+      <%= image_tag post.get_post_image, size: '200x200' %>
     </div>
     <div class="col-9">
       <p><%= post.title %></p>

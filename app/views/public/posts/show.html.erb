@@ -8,7 +8,7 @@
 </div>
 <div class="row pb-2" style="background: #efffe0; border-bottom: solid 1px gray">
   <div class="col-3">
-    <%= image_tag @post.image, size: '200x200' %>
+    <%= image_tag @post.get_post_image, size: '200x200' %>
   </div>
   <div class="col-5">
     <%= @post.title %><br>
