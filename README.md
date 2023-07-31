@@ -19,7 +19,10 @@
 ・新しい音楽に出会いたい人向けに
 
 ## 設計書
-後ほど作成
+・テーブル定義書
+    https://docs.google.com/spreadsheets/d/1ukoPmip7FTF7NlLK4iEw9l4SEnwls6Iap6-Tl7vTfNs/edit#gid=615979916
+・実装機能リスト
+    https://docs.google.com/spreadsheets/d/1u-mn8ZbBh55sK5UrOLxLQ3o_UaHJ5mEK7j5HdeGf8o8/edit#gid=885378170
 
 ## 開発環境
 - OS：Linux(CentOS)
