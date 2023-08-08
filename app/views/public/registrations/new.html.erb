@@ -38,7 +38,7 @@
     </div>
 
     <div class="field">
-      <label><strong>パスワード<確認</strong></label>
+      <label><strong>パスワード<確認></strong></label>
       <div>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", size: 25 %>
       </div>
@@ -52,6 +52,6 @@
     <p><strong>アカウントをお持ちの場合</strong></p>
   </div>
   <div>
-    <%= link_to 'ログイン', user_session_path, class: 'btn btn-light sign_in' %>
+    <%= link_to 'ログイン', root_path, class: 'btn btn-light sign_in' %>
   </div>
 </div>

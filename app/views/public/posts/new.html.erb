@@ -1,5 +1,6 @@
 <div class="container mt-4 pb-5">
   <h2 class="mb-5 mt-5">お気に入りの曲は？</h2>
+  <%= render "public/shared/error_messages", resource: resource %>
   <div class="row">
     <div class="col">
       <%= render 'form', post: @post %>

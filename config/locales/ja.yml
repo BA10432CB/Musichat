@@ -1,7 +1,20 @@
 ja:
+  models:
   activerecord:
     attributes:
+      user:
+        name: "アカウント名"
+        email: "メールアドレス"
+        phone_number: "電話番号"
+        password: "パスワード"
+        introduction: "自己紹介"
       composer:
       genre:
+        name: "ジャンル名"
       post:
+        title: "タイトル"
+        image: "画像"
+        body: "紹介"
+        song_url: "YouTube URL"
+        star: "評価"
       song:
