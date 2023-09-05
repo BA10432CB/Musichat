@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     post "public/guest_sign_in", to: "public/sessions#guest_sign_in"
+    get '/users', to: 'public/registrations#new'
   end
 
   scope module: :public do

@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_up_path_for(resource)
+    posts_path
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :phone_number, :encrypted_password, :password_confirmation])
   end
